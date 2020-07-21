@@ -1,5 +1,5 @@
 /*
- *  myprintenv.c : printenv コマンドのクローン
+ *  myenv.c : env コマンドのクローン
  */
 
 #include <stdio.h>

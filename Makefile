@@ -1,5 +1,5 @@
-all: myprintenv
+all: myenv
 
-myprintenv: myprintenv.c
-	cc -Wall -std=c99 -o myprintenv myprintenv.c
+myenv: myenv.c
+	cc -Wall -std=c99 -o myenv myenv.c
 
