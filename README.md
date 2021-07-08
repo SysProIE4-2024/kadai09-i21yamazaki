@@ -21,6 +21,6 @@ envは環境変数を初期化した上でプログラム（コマンド）を�
 
 ```
 $ make
-cc -Wall -std=c99 -o myenv myenv.c
+cc -D_GNU_SOURCE -Wall -std=c99 -o myenv myenv.c myputenv.c
 $
 ```
