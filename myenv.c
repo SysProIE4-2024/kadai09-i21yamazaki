@@ -21,6 +21,8 @@ int main(int argc, char *argv[]) {
   }
   if (*it != NULL) {
     execvp(*it, it);
+    fprintf(stderr, "%s: ", argv[0]);
+    perror(argv[1]);
     return 1; // execvp が戻る -> エラー
   }
   for (char **env = environ; *env != NULL; ++env) {
@@ -30,6 +32,10 @@ int main(int argc, char *argv[]) {
 }
 
 /* 実行例
+
+コンパイル
+% make                                                    
+cc -D_GNU_SOURCE -Wall -std=c99 -o myenv myenv.c myputenv.c
 
 ここに実行例を書く
 
@@ -54,5 +60,8 @@ Tue Jul  2 08:42:52 JST 2024
 
 % ./myenv echo hello
 hello
+
+% ./myenv hoge
+./myenv: hoge: No such file or directory
 
 */
